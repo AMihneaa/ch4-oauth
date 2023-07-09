@@ -10,16 +10,14 @@ public class HomeController {
 
     private final YouTube youTube;
 
-    public HomeController(YouTube youTube){
+    public HomeController(YouTube youTube) {
         this.youTube = youTube;
     }
 
     @GetMapping("/")
-    public String index(Model model){
-        model.addAttribute("channelVideos", youTube.channelVideo("UCjukbYOd6pjrMpNMFAOKYyw", 10, YouTube.Sort.VIEW_COUNT));
-
+    String index(Model model) {
+        model.addAttribute("channelVideos", youTube.channelVideos("UCjukbYOd6pjrMpNMFAOKYyw", 10, YouTube.Sort.VIEW_COUNT));
         return "index";
     }
-
-
 }
+

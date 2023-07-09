@@ -1,4 +1,4 @@
 package com.springboot.mihnea.ch4oauth.Records;
 
-public record SearchResult(Integer totalResults, Integer resultsPerPage) {
+public record SearchResult(String kind, String etag, SearchId id, SearchSnippet snippet) {
 }
